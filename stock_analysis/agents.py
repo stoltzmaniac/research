@@ -9,7 +9,7 @@ from tools.sec_tools import SECTools
 from langchain.tools.yahoo_finance_news import YahooFinanceNewsTool
 
 
-ollama_openhermes = Ollama(model="llama2")
+llm = Ollama(model="llama2:13b")
 
 class StockAnalysisAgents():
   def financial_analyst(self):
@@ -21,7 +21,7 @@ class StockAnalysisAgents():
       lots of expertise in stock market analysis and investment
       strategies that is working for a super important customer.""",
       verbose=True,
-      llm=ollama_openhermes,
+      llm=llm,
       tools=[
         BrowserTools.scrape_and_summarize_website,
         SearchTools.search_internet,
@@ -41,7 +41,7 @@ class StockAnalysisAgents():
       and market sentiments. Now you're working on super 
       important customer""",
       verbose=True,
-      llm=ollama_openhermes,
+      llm=llm,
       tools=[
         BrowserTools.scrape_and_summarize_website,
         SearchTools.search_internet,
@@ -62,7 +62,7 @@ class StockAnalysisAgents():
       strategic investment advice. You are now working for
       a super importat customer you need to impress.""",
       verbose=True,
-      llm=ollama_openhermes,
+      llm=llm,
       tools=[
         BrowserTools.scrape_and_summarize_website,
         SearchTools.search_internet,
