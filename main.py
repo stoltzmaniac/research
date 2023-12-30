@@ -1,5 +1,6 @@
 import typer
-from stock_analysis.analyze import create_report
+from stock_analysis.analyze import create_stock_analysis_report
+from rental_property_analysis.analyze import create_rental_property_analysis_report
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -7,17 +8,15 @@ load_dotenv()
 
 app = typer.Typer()
 
+
 @app.command()
-def create_stock_analyis_report(company_name: str):
-    create_report(company=company_name)
+def rental_property_analysis_report(market_name: str):
+    create_rental_property_analysis_report(market=market_name)
 
 
 @app.command()
-def goodbye(name: str, formal: bool = False):
-    if formal:
-        print(f"Goodbye Ms. {name}. Have a good day.")
-    else:
-        print(f"Bye {name}!")
+def stock_analyis_report(company_name: str):
+    create_stock_analysis_report(company=company_name)
 
 
 if __name__ == "__main__":
