@@ -9,7 +9,7 @@ from rental_property_analysis.tools.sec_tools import SECTools
 from langchain.tools.yahoo_finance_news import YahooFinanceNewsTool
 
 
-llm = Ollama(model="llama2:13b")
+llm = Ollama(model="openhermes")
 
 class RentalPropertyAnalysisAgents():
   def financial_analyst(self):
