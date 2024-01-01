@@ -35,10 +35,10 @@ class TripPlannerCrew:
     return result
 
 
-def create_trip_planner_report(market):
+def create_trip_planner_report():
    print("## Welcome to Trip Planner Crew")
    print('-------------------------------')
-   trip_planner_crew = TripPlannerCrew(market)
+   trip_planner_crew = TripPlannerCrew()
    result = trip_planner_crew.run()
    print("\n\n########################")
    print("## Here are the recommendations.")
